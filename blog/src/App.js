@@ -2,15 +2,26 @@
 
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from './MyComponent';
+import Counter from './Counter';
+import Say from './Say';
+import EventPractice from './EventPractice';
+
+import Modal from './components/Modal';
 import React, { useState } from 'react';
 
+const App = () => {
+  return <EventPractice />;
+}
+
+/*
 function App() {
 
   let fontExam = { color : 'blue', fontSize : '30px' }; 
   let posts = '강남 고기 맛집';
   function func(){
     return 100
-  }
+  } 
 
   let [postName, changePostName] = useState(['남자 코트 추천', '남자 바지 추천']);
   let [coteStyle, changeCoteStyle] = useState(['긴 코트', '짧은 코트', '중간 코트']);
@@ -28,8 +39,9 @@ function App() {
     changeCoteStyle(newArray);
   }
 
+  
   return (
-    <div className="App">
+      <div className="App">
       <div className="black-nav">
         <div style={ fontExam }>개발 Blog</div>
       </div>
@@ -60,17 +72,6 @@ function App() {
     </div>
   );
 }
-
-/**컴포넌트(App()도 하나의 컴포넌트)의 첫문자는 대문자로.. */
-/**리턴뒤에 소괄호 안에는 하나의 div만 나올 수있다. */
-function Modal(){
-  return (
-    <div className="modal">
-        <h2>제목</h2>
-        <p>날짜</p>
-        <p>상세내용</p>
-    </div>
-  )
-}
+*/
 
 export default App;
