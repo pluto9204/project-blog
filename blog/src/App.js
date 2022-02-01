@@ -2,17 +2,44 @@
 
 import logo from './logo.svg';
 import './App.css';
-import MyComponent from './MyComponent';
-import Counter from './Counter';
-import Say from './Say';
-import EventPractice from './EventPractice';
+import LifeCycleSample from './LifeCycleSample';
+import ErrorBoundary from './ErrorBoundary';
 
 import Modal from './components/Modal';
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 
-const App = () => {
-  return <EventPractice />;
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
+
+class App extends Component {
+  state = {
+    color: '#000000'
+  }
+
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor()
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>랜덤 색상</button>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color} />
+        </ErrorBoundary>
+      </div>
+    )
+  }
+}
+
+/*
+const App = () => {
+  return <IterationSample />;
+}
+*/
 
 /*
 function App() {
@@ -41,7 +68,7 @@ function App() {
 
   
   return (
-      <div className="App">
+    <div className="App">
       <div className="black-nav">
         <div style={ fontExam }>개발 Blog</div>
       </div>
