@@ -4,6 +4,9 @@ import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
 const App = () => {
+  /*
+    해야 할일을 저장할 state
+  */
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -26,6 +29,9 @@ const App = () => {
   //ref를 사용하여 변수 담기
   const nextId = useRef(4);
 
+  /*
+    해야 할일 추가 이벤트
+  */
   const onInsert = useCallback(
     text => {
       const todo = {
@@ -39,6 +45,9 @@ const App = () => {
     [todos],
   );
 
+  /*
+    해야 할일 삭제 이벤트
+  */
   const onRemove = useCallback(
     id => {
       setTodos(todos.filter(todo => todo.id !== id));
@@ -46,6 +55,9 @@ const App = () => {
     [todos],
   );
 
+  /*
+    해야 할일 완료 체크 이벤트
+  */
   const onToggle = useCallback(
     id => {
       setTodos(

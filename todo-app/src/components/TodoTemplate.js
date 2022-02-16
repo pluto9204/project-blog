@@ -1,5 +1,6 @@
 import './TodoTemplate.scss';
 
+//해야 할 일 전체 템플릿
 const TodoTemplate = ({ children }) => {
     return (
         <div className="TodoTemplate">

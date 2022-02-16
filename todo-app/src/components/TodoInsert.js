@@ -2,13 +2,22 @@ import { useState, useCallback } from 'react';
 import { MdAdd } from 'react-icons/md';
 import './TodoInsert.scss';
 
+/*
+    해야 할 일 추가 항목
+*/
 const TodoInsert = ({ onInsert }) => {
     const [value, setValue] = useState('');
 
+    /*
+        텍스트 입력 반영
+    */
     const onChange = useCallback(e => {
         setValue(e.target.value);
     }, []);
 
+    /*
+        해야 할일 추가 이벤트
+    */
     const onSubmit = useCallback(
         e => {
             onInsert(value);

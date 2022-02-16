@@ -6,6 +6,9 @@ import {
 import cn from 'classnames';
 import './TodoListItem.scss';
 
+/*
+    해야할 일 리스트 개별 항목
+*/
 const TodoListItem = ({ todo, onRemove, onToggle }) => {
     const { id, text, checked } = todo;
 
