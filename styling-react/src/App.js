@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import SassComponent from './SassComponent.js';
+import StyledComponent from './StyledComponent.js';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <SassComponent />
+        <StyledComponent />
       </div>
     )
   }
